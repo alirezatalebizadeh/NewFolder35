@@ -151,6 +151,71 @@ console.log(user1 == user2); //false
 
 console.log('null'==='Null'); //false
 
+onsole.log(typeof Null);//undefined
+
+console.log(typeof undefined === typeof Null);// undefined = undefined ==>true
+
+let result = typeof !!null; // ==> typeof false
+console.log(result);//Boolean
+console.log(!'alireza');//false
+
+----------------------access to object prop-----------------------
+
+let user={
+    name:'Alireza',
+    family:'zare',
+    age:25
+}
+
+//Way 1 ==> Dot notation
+console.log(user.name);//Alireza
+let prop='name'
+console.log(user[prop]);//Alireza
+
+//Way2 ==> Brocket notation
+console.log(user['family']);
+
+
+--------------------------question------------------
+const propName = 'sabzlearn'
+
+const obj ={
+    [propName]: propName
+}
+
+const result = obj['propName'] // ==> obj.propName
+
+console.log(obj); // ==> {sabzlearn :'sabzlearn'}
+
+console.log(result);// ?
+//undefined
+
+--------------------------delete method------question---------------------
+
+delete can not delete varable (just delete prop of object)
+
+
+let number =12;
+
+delete number
+//delete can not delete varable
+
+const result= number
+console.log(result);//? =>12
+
+------------------------------
+
+let number ={
+    item:12
+}
+
+delete number.item
+//delete can not delete varable
+
+const result= number.item
+console.log(result);//=> undefined
+
+
 
 
 
