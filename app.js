@@ -1,22 +1,13 @@
-let user = {
-  name: "Alireza",
-  family: "Zare",
-  age: 25,
-};
 
-delete user.age;
-
-// console.log(user);
-//{
-//"name": "Alireza",
-//"family": "Zare"
-//}
-let number ={
-    item:12
+function addNumbers(){
+    let sum = 0;
+    Array.from(arguments).forEach(num => {
+        sum +=  num
+    });
+    return sum
 }
 
-delete number.item
-//delete can not delete varable
+// addNumbers(1,2,3,4)//Arguments(4) [1, 2, 3, 4, callee: ƒ, Symbol(Symbol.iterator): ƒ]
 
-const result= number.item
-console.log(result);//=> undefined
+console.log(addNumbers(1,2,3,4,5,6,7,8,9));
+

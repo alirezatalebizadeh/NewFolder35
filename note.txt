@@ -197,8 +197,8 @@ delete can not delete varable (just delete prop of object)
 
 let number =12;
 
-delete number
 //delete can not delete varable
+delete number
 
 const result= number
 console.log(result);//? =>12
@@ -213,7 +213,62 @@ delete number.item
 //delete can not delete varable
 
 const result= number.item
-console.log(result);//=> undefined
+console.log(result);// ? => undefined
+
+
+==============================oprator usage (or  ,  and)====================================
+
+|| ==> or از روی مقادیر فالس میگذره و مقادیر ترو رو برمیگردونه (trueor ترور)
+
+console.log(true || alert(12)); //true
+//console.log(false || alert(12)); //run alert
+//console.log(false || true || alert(12)); //true
+console.log(0 || 12 || alert(12));//12
+console.log(0 || 'sabzlearn'|| alert('ali'));//sabzlearn
+console.log(0 || ""|| 4000);//4000
+
+-------------------
+&& ==> and . از رو ترو رد میشه.اگه با فالس برسه متوقف میشه.
+
+console.log('amin'&& 'amir');//true && true => amir
+
+let numbers = [1,2,3,4,5,6,7,8,9]
+
+numbers.length > 0 && numbers.forEach(num => console.log(num))// 1,2,3,4,5,...
+
+
+---------------------------------------question--------------
+let result1 = null || undefined ||18; // false || false ||true
+let result2= null && undefined 
+console.log(result1); ?//18
+console.log(result2); ?//null
+
+---------------------------------------question----------
+let result = 0 || 1 && 2 && 3 ; //false || true && true && true
+
+console.log(result);//? => 3
+
+=============================arquments======================
+
+گیرنده ی تمامی ورودی های یک تابع هست و یک شبه آرایه هست . باید حتما تبدیلش کنی با ارایه بعد روش کار کنی.
+function addNumbers(){
+    let sum = 0;
+    Array.from(arguments).forEach(num => {
+        sum +=  num
+    });
+    return sum
+}
+
+// addNumbers(1,2,3,4)//Arguments(4) [1, 2, 3, 4, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+
+console.log(addNumbers(1,2,3,4,5,6,7,8,9));//45
+
+
+
+
+
+
+
 
 
 
