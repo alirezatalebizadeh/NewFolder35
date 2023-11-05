@@ -33,18 +33,32 @@ mdn , javascript.jsرو کامل بخون.
 
 جونیور بودن خجالت نداره . پیوسته آموزش ببین. با افتخار برو سر جلسات و به اندازه توانت ارايه بده. 
 
+===========================data tyoes=================
 
+string ('text' , "text" , `text`) /
+number(-12 , 3.14 , +12) / 
+bigInt  (math.max_value) / 
+boolean (true , false) /
+undefined ()/ زمانی که نوع یه چیزی مشخص نیس
+object {id , name, password , ...}/==>برای ذخیره ی اطلاعات کاربران 
+(null / type0f null==> object (زمانی که بخوایم مقدار اولیه ای به یه متغیر بدیم و توی فانکشن و جاهای دیگه مقدارش رو مشخص کنیم.))
+symbol /مثل ایدی کاربر و هر چیزی که منحصر به فرد و یکتا هست
 
+array /==> یه نوع ابجکت به حساب میان ولی keyولیو دارن
 
+=======================================false and true value
 
+false : 
+false , 0 , -0 , - (number value) , "", null , undefind , NaN , 
 
+true : other values 
 
+کاربرد : در شرط  ها و صحت سنجی برای گرفتن اطلاعات واقعی از حافظه لوکال استورج    
 
-
-
-
-
-
+if(!value or !isLogin) {
+    //code
+}
+========================what's deffrent between null and undefind?=========
 
 
 
