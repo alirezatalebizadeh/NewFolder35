@@ -41,7 +41,7 @@ bigInt  (math.max_value) /
 boolean (true , false) /
 undefined ()/ زمانی که نوع یه چیزی مشخص نیس
 object {id , name, password , ...}/==>برای ذخیره ی اطلاعات کاربران 
-(null / type0f null==> object (زمانی که بخوایم مقدار اولیه ای به یه متغیر بدیم و توی فانکشن و جاهای دیگه مقدارش رو مشخص کنیم.))
+(null / type0f null==> object (این یک باگ توی جاوااسکریپت هست)(زمانی که بخوایم مقدار اولیه ای به یه متغیر بدیم و توی فانکشن و جاهای دیگه مقدارش رو مشخص کنیم.))
 symbol /مثل ایدی کاربر و هر چیزی که منحصر به فرد و یکتا هست
 
 array /==> یه نوع ابجکت به حساب میان ولی keyولیو دارن
@@ -59,6 +59,98 @@ if(!value or !isLogin) {
     //code
 }
 ========================what's deffrent between null and undefind?=========
+
+
+let myFirstVal= null;
+let mySecondVar = undefined;
+let mtThirdVar ;//whitOut value
+console.log(myFirstVal);//=> nul
+console.log(mySecondVar);//=> undefined
+console.log(myFirstVal);// null
+
+
+function logger(num){
+    console.log(num);
+}
+logger()//without value ==> undefined
+
+//null = 0 
+console.log(null + 10 ); // 0+10 = 10
+console.log(null * 5); // 0*5 =0
+//undefined = ? ( نامشخص و ناشناس)
+console.log(undefined + 10); // ==> NaN
+console.log(Boolean(undefined));//false
+console.log(Boolean(null));//false
+
+console.log(null == undefined);//true
+console.log(null === undefined);//false
+console.log(!undefined === !null) //(true === true);//! true
+
+==========================================Scope=================
+
+types:
+
+global
+local {
+    block ,
+    function
+}
+
+گلوبال ها همه جا قابل دسترسی ان.
+
+var / let / const
+
+var همه جا قابل دسترسه حتی اگه لوکال باشه
+let globalVar = "global";
+
+{
+  let localVar = "local";
+}
+
+
+//console.log(globalVar);//global
+//console.log(localVar);// not defined
+
+
+function logger(){
+    if(true){
+        var varVar = 'Var value'
+        let letVar = 'let Value'
+        const constVar= 'const Var'
+    }
+
+    console.log(varVar);//var value
+    console.log(letVar);//not defined
+    console.log(constVar);//
+}
+logger()
+----------------------------question1------------
+
+function func(obj) {
+  // اسم ورودی گمراه کننده هست.
+  obj = null;
+  console.log(obj); //null
+}
+// console.log(obj); Cannot access 'obj' before initialization
+
+const obj = {
+  name: "Sabzlearn",
+};
+
+func(obj);
+
+const result = obj.name;
+console.log(result); //sabzlearn
+
+-------------------------Case sensetive----------------
+به حروف بزرگ و کوچیک حساسه.
+let user1 = "Amin";
+let user2 = "min";
+
+console.log(user1 == user2); //false
+
+console.log('null'==='Null'); //false
+
 
 
 
