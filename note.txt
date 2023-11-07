@@ -549,13 +549,110 @@ console.log(app.name);
 //console.log(undefined); //output => undefined
 //در این زبان نمیتونم از کلماتی مثل undefined , null , ... استفاده کنیم برای نام گذاری هر چیزی
 
+================================NaN================================
 
+نمیتونیم مقادیری که نمیشه به عدد تبدیل کرد عملیات ریاضی اجرا کرد. 
 
+console.log("sabzlearn" / "ali"); //NaN
+console.log(12 / "Ali"); //NaN
+console.log(Math.floor("amir")); //NaN
+console.log("react" + " js"); //react js
+console.log(!!NaN); //false
+console.log(typeof NaN); //number
+console.log(NaN + 1); //NaN
+console.log(NaN == NaN, NaN === NaN); //false , false
+console.log("js" - " vue" === NaN); // false
 
+--------------------------------9 question about NaN--------------------------
+console.log( 100 + NaN);// output => NaN
+console.log(typeof NaN);//output => NaN
+console.log(100 - NaN);//output =>NaN
+console.log('a' - NaN);//output => NaN
+console.log('a' + NaN); //output => aNaN ===> میتونیم با هم جمع بزنیم
+console.log(NaN == NaN); //output => false ==> با هیچی مساوی نیستNaN
+console.log('a' - 'b'); // output => NaN
+console.log('js' + 'react' / 'vue'); //output => jsNaN
+//react / vue ==> NaN
+//js + NaN ==> jsNaN
 
+-------------------------------------8 question about scope--------------------------
 
+// (function (){
+// var a =10;
+// })()
+// console.log(a);// output => ReferenceError: a is not defined
+---------------------------
+// var foo = (function(){
+//     var foo = 1;
+// })
+// foo()
+// console.log(foo);
+//output =>
 
+// ƒ (){
+//     var foo = 1;
+// }
+---------------------------
 
+// var i = 5;
+// if (i < 20) {
+//   var k = 50;
+// }
+ //متغیر ور هیچ کاری به اسکوپ ها نداره . کلا عمومی به حساب میاد.
+// console.log(k); //output => 50
+
+ --------------------------
+
+var id = 10;
+var site = 'alireza'
+console.log(window.id); // output = 10
+console.log(window.site);//output = alireza
+
+---------------------------
+function foo() {
+  var number = 10;
+  func();
+}
+
+function func() {
+  console.log(number); // number is not defined
+}
+//چون بهش دسترسی نداره 
+foo();
+---------------------------
+var count = 10;
+
+function foo() {
+  var count = 100;
+  function func() {
+    console.log(count); //output => 100
+  }
+
+  func();
+}
+//اول اسکوپ خودش رو میگرده
+foo();
+
+--------------------------
+
+var size = 18;
+function foo() {
+   size = 100;
+}
+
+foo();
+console.log(size); // output = 18
+
+--------------------------
+var number = 10;
+
+(function () {
+  var number = 100;
+})();
+//دسترسی به اسکوپ فعل نداریم.
+console.log(number);// output => 10
+
+-------------------------
 
 
 
