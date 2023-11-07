@@ -511,11 +511,43 @@ console.log(app.name);
 //چون ابجکت رفرنس تایپ به حساب میاد  خروجی  بهمون میده
 //output => alireza
 
--------------------------------------question-------------------------
+-------------------------------------10 question -------------------------
 
+//console.log(typeof null); // output (این یک باگ توی زیان هست که هنوز نتونستن درستش کنن)=> object
 
+//console.log(typeof undefined);//output => undefined
 
+//console.log(null ==undefined); //output => true
+//چوت دوتا مساوی داره مقادیرشون مقایسه میشه
+//console.log(null === undefined); //false
+//تایپاشون یکی نیستن
 
+//console.log(undefined && null); //output => undefined
+//چون مقدار اولی فالس هست و دیگه ادامه داده نمیشه
+//&& به فالس رسید استاپ میکنه
+
+// var value = null;
+// console.log(++value);//output => +1
+// null = 0;
+
+//console.log(!!null); //output => false
+//null = false
+//!null = true
+//!!null = null
+
+//console.log(10 - null);// output => 10
+//10 - 0 = 10
+
+//console.log(200 - undefined); //output => NaN
+//undefined مقدار عددی نداره
+//undefined != 0
+
+//var value = undefined;
+//console.log(--value);//output => NaN
+
+//var undefined = 10;
+//console.log(undefined); //output => undefined
+//در این زبان نمیتونم از کلماتی مثل undefined , null , ... استفاده کنیم برای نام گذاری هر چیزی
 
 
 
