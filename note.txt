@@ -289,7 +289,6 @@ console.log(addNumbers(1, 2, 3, 4, 5, 6, 7, 8, 9));//app.js:4 Uncaught Reference
 یعنی بالابردن .
 
 افعالی که بصورت ساده تعریف میشن و متغیر هایی که با کلمه ور ساخته میشن هویست میشن.
-
 looger()
 
 function looger(){
@@ -302,6 +301,220 @@ console.log(number);
 var number;
 
 --------------------------------question------------------------------------
+فقط تعریف متغیر هویست میشه . نه مقدار دادن بهش.
+
+var age = 10;
+
+function logAge() {
+    var age
+  console.log(age);
+   age = 20;
+}
+
+logAge();//? => undefined
+
+===========================Number method==================================
+برای تبدیل یه داده به نوع عددی استفاده میشه.
+
+let num = Number("15");
+let num2 = Number("Alireza");
+console.log(num); //15
+console.log(num2); //NaN
+console.log(Number(true)); //1
+console.log(Number(false)); //0
+console.log(Number("")); //0
+console.log(Number('')+15);  //15
+
+----------------------------question--------------------------
+function addParams(firstParam, secondParam = 5) {
+  return firstParam + secondParam;
+}
+//ورودی تابع زمانی دیفالتش رو بر میداره که نامشخض باشه نه نال
+//null = 0;
+let res = addParams(7, null); // ?=> 7 + 0 = 7
+let res2 = addParams(7, undefined); // ?=> 7 + 5 = 12
+console.log(res);
+
+----------------------------question-----------------------------
+let result = 18;
+
+function func() {
+  inner();
+  return;
+
+  function inner() {
+    result = 30;
+  }
+}
+
+func();
+
+console.log(result); //? => 30
+//چون تابع به هویست میشه .
+
+================================= توابع خودخوان IIFE(self invoked)==============================
+این توابع نیازی به فراخوانی نداره و خود به خود اجرا میشه.
+
+برای ساخت کتابخونه و پلاگین استفاده میشه.
+
+//Syntax
+(function () {
+  console.log('I.m alireza from iran');
+})();
+
+------------------------------------------question---------------------
+let outSide = 18;
+
+if (outSide) {
+  let inSide = 30;
+}
+// چون با کلمه لت ساخته شده بهش دسترسی نداریم
+
+let result = typeof inSide;
+console.log(result); //? ==>  undefined
+
+
+============================ Automatic Selection Insertion ===============================
+بصورت  اتوماتیک مرورگر انتهای کدهامون سمی کالون میزاره.
+
+
+//استثنا ها
+let num1 = 2;
+let num2 = 2;
+
+let numbers = [1, 2, 6];
+
+numbers.forEach((num) => {
+  console.log(num);
+});
+
+["ali", "reza", "mohammad"].forEach((person) => {
+  console.log(person);
+});
+
+(function () {
+  console.log("IIFE");
+})();
+
+const userGenerator = (userName = "alireza") => {
+  return {
+    name: userName,
+  };
+};
+
+console.log(userGenerator()); //{name :'alireza'}
+
+let a = 5;
+let b = 3 + a ;
+('sabzlearn' + a).toUpperCase()
+-----------------------------question-------------------------------
+function func1() {
+  return {
+    name: "alireza",
+  };
+}
+
+function func2() {
+  return;
+  {
+    family: "zare";
+  }
+}
+
+console.log(typeof func1()); //? object
+console.log(typeof func2()); //? undefined
+
+--------------------------------question------------------------------
+
+let value = 13;
+const result = value--;
+console.log(value);//? ==> 12
+console.log(result);//? ==>13
+
+// let num1 = 10;
+// console.log(num1);
+// num1--; //9
+// --num1; //8
+// num1++; //9
+// ++num1; //10
+// console.log(num1);
+
+----------------------------------question---------------------------------
+بهعد از ۳۴ باید سمی کالون بزاری که به ارور نخوری. مرورگر فکر میکنه روی ۳۴ فانکشن اجرا کردی
+var value = 18;
+var result = 34
+
+(function () {
+  result = value;
+
+  var value = 90;
+})();
+
+console.log(result); //? => undefined
+
+//refactor
+
+(function () {
+  var value;
+
+  result = value; //undefined
+  //متغیر هویست میشه و میره خط اول. اما مقدارش توی همین خط میمونه.چوم مقدار نداری نتیجش اندیفایند میشه
+  value = 90;
+
+  var value = 90;
+})();
+
+--------------------------------------question--------------------------
+var foo = (function () {
+  var foo = 2;
+})();
+//چیزی بر نگردونه . اگه برمیگردوند میشه ۲
+console.log(foo);//? ==> undefined
+
+-----------------------------------------question-----------------------
+var result = (function (){
+  var name = 'sabzlearn'
+  return name
+})()
+//چون مقدار رو برگردونده 
+console.log(result);//? => sabzlearn
+
+---------------------------------------------question--------------------
+var app = {}(function (param) {
+  console.log(param === app); //? => true
+})(app);
+//دریته دتا ابجکت با هم مقایسه شدن ولی دپتاش یکی هستن. ادرس هاشون ا هم برابره.پس نتیجه مقایسه ترو میشه
+
+-------------------------------------question--------------------------
+
+(function (){
+  var a = 5;
+})()
+
+console.log(a); 
+//چون متغیر توی فانکشن تعریف شده 
+//output => Error : a is not defined
+--------------------------------------question--------------------------
+-function(){
+console.log('text');
+}()
+//مشکلی نداره . حتی سینتکسی
+//output => text
+--------------------------------------question-------------------------
+var app = {};
+
+(function (param) {
+  param.name = "alireza";
+})(app);
+console.log(app.name);
+
+//چون ابجکت رفرنس تایپ به حساب میاد  خروجی  بهمون میده
+//output => alireza
+
+-------------------------------------question-------------------------
+
+
+
 
 
 
