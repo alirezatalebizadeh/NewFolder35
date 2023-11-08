@@ -724,7 +724,71 @@ function foo() {
 
 foo();
 =========================================22 question about and , or =========
+console.log("cars" && "plans"); //? => plans
+console.log(undefined && null); //? => undefined
 
+//&&از روی مقادیر true میگذره
+var id = 2;
+if (false && ++id) {
+}
+//چون سمت چپ فالس هست سمت راست اجرا نمیشه
+console.log(id); //? => 2
+console.log(null && 99); //? => null
+console.log("B" && NaN); //? => NaN
+
+var obj = { prop: 1 };
+console.log(obj && 10); //? => 10
+console.log(!!{}); //?=> true
+//ابجکت خالی هم باشه ترو به حساب میاد
+
+console.log("A" && undefined); //? => undefined
+console.log(false && userName); //? => false
+console.log("cat" && ""); //? => false
+
+console.log(null || undefined); //? => undefined
+console.log(NaN || null); //? => null
+//console.log(NaN || Null); //? =>  Null is not defined
+console.log(undefined || NaN); //? => NaN
+
+let obj = { prop: 10 };
+console.log(obj || false); //? => {prop : 10}
+console.log("cat" || ""); //? => cat
+console.log("rabbit" || "fox"); //? => rabbit
+console.log(""|| false);//? => false
+
+var id=4;
+if(false || ++id){}
+console.log(id);//? => 5
+
+console.log(false || 100);//?=> 100
+console.log(0 || -1); //?=> -1
+//0 = false
+console.log("0" || -1); //? => 0
+
+==================================13 question about math ops ====================
+
+console.log(10 * "text"); // NaN
+//10 * string = NaN
+
+console.log(4 / 0); //Infinity
+console.log("9" * 3); //? => 27
+//چون مقدارش میتونه تبدیل بشه به عدد
+console.log(-4 / 0); //?=> -Infinity
+console.log(200 + undefined); // ?=> NaN
+console.log("200" + undefined); // ? => 200undefined
+//چون جمع شدن (این استثنا بود)
+
+console.log("200" + "100"); // ? => هر دو استرینگ هستن 200100
+console.log(2 + null); //?=> 2 + 0 = 2
+console.log(100 + null); //?=>  100+ 0 = 100
+console.log('100'+null);//?=> 100null
+
+console.log('a'+ NaN);//? => aNaN
+//console.log('a' + Null);//? => Null is not defined
+console.log('b' + 'a' + +'a'+'a');//? => baNaNa
+console.log('1' - - '1');// ? => 1 - (-1) = 2
+
+===================================10 question  about hoisting==================================
 
 
 
