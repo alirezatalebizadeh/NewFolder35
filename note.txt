@@ -964,6 +964,43 @@ console.log(typeof this); //? => {window} =>  object
 
 =======================================8 question about objects==============
 
+console.log(typeof {}); // object
+
+
+var obj = { x: 3, y: 6 };
+console.log(Object.keys(obj)); //['x,'y']
+//object.keys()==> return key of object
+
+
+var obj = { a: 2, b: 4 };
+console.log(Object.values(obj)); //[2 , 4]
+//object.values ===> return value of object
+
+
+var obj = { a: 1, b: 2 };
+Object.freeze(obj);
+obj.c = 3;
+//وقتی یه چیزی رو فریز میکنیم نمیتونیم بهش پراپرتی اضافه کنیم.
+console.log(obj.c);//undefined
+
+
+var person = {name: 'sabzlearn' , age: 3}
+Object.seal(person);
+//این متد نمیزاره هیچی از ابجکت حذف کنی.
+delete person.age
+console.log(person.age);
+
+console.log({} == {}); //false =>  چون رفرنس تایپ به حساب میان و ادرسشون یکی نیس
+
+var users = { 1: "Amin", 2: "Ahmmad", 3: "reza", 4: "Ali" };
+console.log(Object.keys(users).length);
+
+========================================70 questions==============
+
+
+
+
+
 
 
 
