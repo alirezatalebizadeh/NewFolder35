@@ -790,7 +790,76 @@ console.log('1' - - '1');// ? => 1 - (-1) = 2
 
 ===================================10 question  about hoisting==================================
 
+var price = 1000;
 
+(function () {
+  console.log(price);//undefined
+  var price = 2000;
+})();
+//چون با ور ساخته شده پس خود متغیر میره بالا ولی مقدارش سرجاش میمونه.
+//refactor
+(function () {
+  var price ;
+  console.log(price);
+  price = 2000
+})();
+
+-------------------------------
+
+function foo(){
+    console.log(number);//undefined
+}
+foo()
+var number = 10
+//refactor
+
+//توضیحات مثل سوال بالا
+---------------------------
+display()
+var display = function(){
+    console.log('Executed ...');//? => display is not a function
+}
+//هویست نمیشه
+
+--------------------------
+show()
+function show(){
+    console.log('executed...');//? => executed...
+}
+
+--------------------------
+foo();
+var foo = 1;
+function foo() {
+  console.log("foo execute :))"); //? => foo execute
+}
+//اول فانکشن هویست میشه
+--------------------------
+console.log(variable);//? => undefined
+var variable = 12
+
+//خود متغیر هویست میشه ولی مقدارش سرجاش میمونه
+
+-------------------------
+console.log(MIN);//? => Cannot access 'MIN' before initialization
+const MIN = 10;
+------------------------
+var x;
+console.log(x);//? => undefined
+x = 1;
+//مقدارش هویست نمیشه.
+-----------------------
+
+
+console.log(userID);// Cannot access 'userID' before initialization
+let userID = 10;
+
+----------------------
+var total = num1 + num2;
+var num1 = 100;
+var num2 = 5;
+console.log(total); //? => NaN
+---------------------
 
 
 
