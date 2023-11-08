@@ -860,6 +860,52 @@ var num1 = 100;
 var num2 = 5;
 console.log(total); //? => NaN
 ---------------------
+========================================۳ question about functions==========
+function foo(){
+    var number = 10;
+    func()
+}
+
+function func(){
+    console.log(number);//number is not defined
+}
+foo()
+
+//تابع فانک هویست میشه . ولی دسترسی نداره به متغیر
+
+----------------------------------
+ function foo(a, a, a, a, a) {
+  console.log("execute");
+}
+foo(1,1)
+//مشکلی توی نام گذاری نداریم. بدون خطا اجرا میشه
+----------------------------------
+
+function add(a, b, c) {
+  return a + b + c;
+}
+
+function add(a, b) {
+  return a + b;
+}
+console.log(add(2, 4, 6));//6
+تابع دوم اجرا میشه نه تابع اول
+
+---------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
