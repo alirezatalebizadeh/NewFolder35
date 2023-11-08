@@ -891,9 +891,78 @@ function add(a, b) {
 console.log(add(2, 4, 6));//6
 تابع دوم اجرا میشه نه تابع اول
 
+=================================10 question about keyword================
+
+var obj = {
+    title:'title',
+    get :function (){
+        console.log(this);//? => {title: 'title', get: ƒ}
+    }
+}
+
+obj.get()
+
+-------------------------------------
+var number = 100;
+console.log(this.number); //? => 100
+//this => window
+-------------------------------------
+var obj ={
+    get : function(){
+        function fn(){
+            console.log(this);//? => window
+        }
+        fn()
+    }
+}
+obj.get()
+//this توی یه فانکشن دیه هست. غیر مستقیم توی getهست
+
+-------------------------------------
+function foo() {
+  var a = 5;
+  func();
+}
+
+function func() {
+  console.log(this.a);//? => 10
+}
+var a = 10;
+foo();
+//هویست میشه و بعنوان یه متغیر سراسری ویندو شناخته میشه.
+
+------------------------------------
+var obj = {
+    get:function (){
+        return this //=> obj
+    }
+}
+
+console.log(obj.get() === obj);//? => true
+//درسته آدرس ابجکت ها با هم فرق دارن. ولی دوتا ابجکتی که مقایسه شدن یکی هستن.
+
+----------------------------------
+function foo(){
+    console.log(this);
+}
+foo()//> window
+
+//this در توابع معمولی به ویندو اشاره میکنن 
+---------------------------------
+console.log(this === window);// ? => true
 ---------------------------------
 
+'use strict'
 
+function foo(){
+    console.log(this);
+}
+foo() //? => undefined
+//چون حالت سخت گیرانه رو داریم دیه به ویندو اشاره نمیکنه
+--------------------------------
+console.log(typeof this); //? => {window} =>  object
+
+=======================================8 question about objects==============
 
 
 
