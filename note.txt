@@ -654,6 +654,80 @@ console.log(number);// output => 10
 
 -------------------------
 
+=============================================question about type of=========
+
+var foo = function(){}
+
+console.log(typeof foo);// output => function
+
+console.log(typeof []); // output => object
+//ارایه یه ابجکت کلیدخوره
+
+console.log(typeof {});//output => object
+
+console.log(typeof Object); // output => function
+console.log(typeof Array); // output => function
+console.log(typeof Function); // output => function
+console.log(typeof Number); // output => function
+console.log(typeof String); // output => function
+//۵ متد بالا کانستراکتور به حساب میان و فانکشن هستن
+
+console.log(typeof undefined);//output => undefined
+console.log(typeof null);//output => object
+console.log(typeof NaN); // output => number
+console.log(typeof Infinity);//output => number
+console.log(typeof -Infinity); // output => number
+//inifinity => بینهایت
+
+console.log(4 / 0); // inifinity
+
+
+var id // undefined
+console.log(typeof id);
+
+=================================question about arguments=============
+function foo(a, b) {
+  console.log(arguments.length); //? => 6
+}
+foo(1, 2, 3, 4, 5, 6);
+//ارگیومنت فقط ورودی هایی که ارسال میشه رو دریافت میکنه
+
+--------------------------------
+
+function foo(a, b) {
+  console.log(foo.length); //? => 2
+}
+//تعداد ورودی هایی هست که خودمون در نظر گرفتیم. a,b
+foo(1, 2, 3, 4, 5, 6);
+
+-------------------------------
+function foo() {
+  arguments[0] = 5;
+  console.log(arguments[0]); //? => 5
+}
+//مقادیر ارگیومنت رو میتونیم تغییر بدیم. یعنی فقط قابل خواندن نیستن
+
+foo();
+-------------------------------------
+//ارایه و شبه ارایه یک ابجکت به حساب میان
+function foo() {
+  console.log(typeof arguments); //? => object
+}
+
+foo(1, 2, 3);
+-----------------------------------
+function foo() {
+  arguments.forEach((e) => {
+    console.log(e); // ? => arguments.forEach is not a function
+  });
+}
+
+foo();
+=========================================22 question about and , or =========
+
+
+
+
 
 
 
