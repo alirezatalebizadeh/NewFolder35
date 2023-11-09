@@ -1091,9 +1091,223 @@ const result3 = 18 && func()// 18 && 34
 console.log(result3); // 34
 //---------------------------------------------------
 
+let result = "ECMAScript".slice(1, -1);
+console.log(result); //CMAScrop
+//-----------------------------------------
+const array = [1, 2, 3, 4, 5];
+const result1 = array.shift() - array.pop(); // 1 - 5 = -4
+console.log(result1);
+//-----------------------------------------
+
+const array1 = [1, 2, 3];
+let result2 = 0;
+//حلقه به ایندکس ها اشاره میکنه . چون حلقه for inهست
+for (const value in array1) {
+  result2 += +value;
+}
+//چون تبدیل شده به عدد با هم جمع میشن
+console.log(result2); //3
+//-----------------------------------------
+
+let array2 = [1, 2, 3];
+const result3 = 3 in array2;
+console.log(result3); //false
+//ایندکس ۳ نداریم
+//-----------------------------------------
+let result4 = 18;
+try {
+  result4 = 34 / 0;
+} catch {
+  result4 = 0 / 34;
+}
+console.log(result4); //infinity
+//----------------------------------------
+
+//parseInt => convert string to number
+//تا جایی که بتونه به عدد تبدیل کنه این کارو میکنه.
+console.log(parseInt("9 text")); //9
+console.log(Number("9 text")); //NaN
+//Number نمیتونه این کارو کنه
+
+let res = Number.parseInt("2022 Year");
+console.log(res); //2022
+//---------------------------------------
+
+const plus = +0;
+const minus = -0;
+//+ و − روی ۰ بی تاثیره
+console.log(plus === minus); //true
+//---------------------------------------
+const name = "JAVAScript";
+
+const func = function () {
+  return this.name;
+};
+
+const obj = {
+  name: "ECMAScript",
+  func: func,
+};
+//refactor
+
+// const obj = {
+//   name: "ECMAScript",
+//   func: function () {
+//     return this.name;
+//   },
+// };
+
+const result = obj.func();
+console.log(result); //ECMAScript
+//------------------------------------------------
+
+const getA = () => 1;
+const getB = () => 2;
+const getC = () => 3;
+
+const result1 = (getA(), getB(), getC())//(1,2,3)
+//عملگر کاما سمت راست ترین دیتا رو برمیگردونه
+console.log(result1);//3
+//----------------------------------------------------
+
+let items = [18, 34, 42, 90];
+const noop = (value) => value;
+
+for (var i = 0; i < items.length; i++) {
+  noop(items[i]); //0,1,2,3,4
+}
+const result = i;
+console.log(result); // 4
+//-------------------------------------------------
+
+const value = 23.45;
+const result = value.toFixed(1); //
+console.log(result); //23.4
+//--------------------------------------------
+const obj = {
+  name: "ECMAScript",
+  version: 2022,
+};
+const result1 = Object.values(obj).join(""); //['ECMAScript','2022'].join('')
+console.log(result1); //ECMAScript2022
+//--------------------------------------------
+
+function func() {
+  result;
+}
+const res = func();
+console.log(res); //undefined
+//--------------------------------------------
+let prop = 34;
+const result2 = window.prop;
+console.log(window.prop); //undefined
+//چون با لت ساخته شده و توی ویندو ذخیره نمیشه
+//--------------------------------------------
+const result3 = "1" == 1;
+console.log(result3);//true
+//--------------------------------------------
+
+const array = [1,3,5,3,10]
+const result4 = array.lastIndexOf(3)
+console.log(result4);//3
+//ایندکس اخرین ایتم رو که پیدا میکنه برمیگردونه
+//-------------------------------------------
+
+const User = function (name) {
+  this.name = name;
+};
+
+const user1 = new User("alireza");
+const user2 = new User("alireza");
+console.log(user1 === user2); //false
+console.log(user1, user2); //User {name: 'alireza'} / User {name: 'alireza'}
+//چون هر دو ابجکت به حساب میان و ابجکت رفرنس  تایپ هستن .پس ادرس هاشون یکی نیس.
+
+//-------------------------------------------
+var prop = 1;
+var prop = 2;
+const result = prop;
+console.log(result);//2
+//because prop created with var , this this not problem
+//-------------------------------------------------
+
+const array = [1,2,3]
+array.length = 0;//[]
+const result = array[0]
+console.log(result);//undefined
+//----------------------------------------------
+
+eval یه چیزی رو میگیره و اون رو در قالب جی اس اجرا میکنه.
+const value =34;
+const result1 = eval('value + value')// value + value = 34 + 34
+console.log(result1);
+//----------------------------------------------
+
+const str = 'JAVAScript'
+const result2 =  str.length;
+console.log(result2);//10
+//---------------------------------------------
 
 
+const first = 18;//type of number
+const second = new Number(first)//type of Object
+const result = first === second; // false
+console.log(result);
+//---------------------------------------------------
 
+const func = function fName(){
+    return 18;
+}
+
+const result1 = typeof fName;
+اسم تابع funcهست.
+console.log(result1);
+
+//--------------------------------------------------
+پراپرتی toString  وجود داره توی ابجکت ها
+
+const obj1 ={}
+const result1 = 'toString' in obj1
+console.log(result1);//true
+//---------------------------------------------------
+
+const array = new Array(20)
+const result = array[0]
+console.log(array);//[empty * 20]
+console.log(result);//undefined
+console.log(typeof array);//object
+const result = typeof add;
+function add(first, second) {
+  return first * second;
+}
+
+console.log(result); //function
+//---------------------------------------
+
+let someValue = 18;
+function func() {
+  someValue = 34; //block scope
+  return;
+  function someValue() {}
+}
+func();
+const result1 = someValue;
+console.log(result1); //18
+//---------------------------------------
+
+const array = [1, 2, 3, 4, 5];
+const result2 = array.fill(1, 2).join(""); //[1,2,1,1,1].join('')
+console.log(result2); //12111
+//---------------------------------------
+
+const array1 = [1, 2, 3];
+const result3 = array1.concat([4], [5]);
+console.log(result3); //[1,2,3,4,5]
+//--------------------------------------
+
+const result4 = true * 10 - 1;
+console.log(result4);//1*10-1=9
+//=========================================11 question end=============
 
 
 
