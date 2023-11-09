@@ -1309,11 +1309,120 @@ const result4 = true * 10 - 1;
 console.log(result4);//1*10-1=9
 //=========================================11 question end=============
 
+//for which value of x the results of the following logs are not the same ?
+let x = NaN;
+console.log(x <= 100);
+console.log(!(x > 100));
+//-------------------------------------------
+// write a mul function which work property when invoked with following syntax.
+console.log(mul(2)(3)(4)); //output=24
+console.log(mul(4)(3)(4)); //output=48
 
+function mul(a) {
+  return function (b) {
+    return function (c) {
+      return a * b * c;
+    };
+  };
+}
 
+//-----------------------------------------------
+//how to empty an error in js?
+var arrayList = ["a", "b", "c", "d", "e", "f"];
 
+//way 1
+// arrayList.length = 0;
 
+//way 2
+// arrayList.splice(0, arrayList.length);
 
+//way 3
+while(arrayList.length){
+    arrayList.pop()
+}
+
+console.log(arrayList);//[]
+//----------------------------------------------
+
+var output = (function (x) {
+  delete x;
+  return x;
+})(0);
+
+console.log(output); //output = 0
+//دیلت برای ابجکت کار میکنه نه متغیر ها
+
+//-------------------------------------------
+
+var x = 1;
+
+var output = (function(){
+    delete x;
+    return x;
+})()
+console.log(output);//1
+//--------------------------------------------
+var x = { foo: 1 };
+
+var output = function () {
+  delete x.foo; //delete prop of object
+  return x.foo;
+};
+console.log(output()); //undefined
+//---------------------------------------------------
+
+var trees = ["aaa", "bbb", "ccc", "ddd", "eee"];
+
+delete trees[3];
+console.log(trees.length);// 5 => ['aaa', 'bbb', 'ccc', empty, 'eee']
+//-------------------------------------
+
+function mul(x) {
+  return function (y) {
+    return function (z) {
+      return function (w) {
+        return function (p) {
+          return x * y * z * w * p;
+        };
+      };
+    };
+  };
+}
+console.log(mul(2)(3)(4)(5)(6)); // 720
+
+//----------------------------------------------------
+
+function setName() {
+  this.name = "text";
+}
+setName();
+console.log(this.name); //text
+
+//----------------------------------------------------
+
+function func(num1) {
+  var num2 = 6;
+  function TDK() {
+    var num3 = 10;
+    console.log(num1 * num2 * num3);//5*6*10 => 300
+  }
+  return TDK;
+}
+
+let TeamDevKode = func(5);
+TeamDevKode()
+
+//-------------------------------------------------------
+
+let a = 3;
+let b = new Number(3);
+let c = 3;
+
+console.log(a == b); //true
+console.log(a === b); // number != object => false
+console.log(a === c);
+
+//------------------------------------------------------
 
 
 
