@@ -996,6 +996,101 @@ var users = { 1: "Amin", 2: "Ahmmad", 3: "reza", 4: "Ali" };
 console.log(Object.keys(users).length);
 
 ========================================70 questions==============
+var value = 18;
+if (value > 1) {
+  var value = 34;
+}
+const result = value;
+
+console.log(value); //? => 34
+
+//-----------------------------------------
+let isTrue = false;
+const result1 = isTrue ? 18 : 50;
+console.log(result1); // ? => 50
+//-----------------------------------------
+
+const array = [1, 2, 3];
+console.log(array[3]); //? => undefined
+//-----------------------------------------
+
+let value1 = 0;
+do {
+  value1 += 1;
+} while (false);
+console.log(value1); // 1
+//-----------------------------------------
+const arr = [1, 2, 3, 4, 5];
+
+const result2 = arr.push(6) - arr.pop(); //6 - 6
+//pop => برگرداننده ی عنصر اخر ارایه
+console.log(result2); //0
+//-----------------------------------------
+const arr1 = [1, 4, 9];
+const result3 = 2 in arr;
+console.log(result3); //true
+//۲ بعنوان ایندکس داخل ارایه وجود داره
+//-----------------------------------------
+
+const obj = {
+  name: "alireza",
+};
+const template = JSON.parse(JSON.stringify(obj));
+//json.parse یه ابجکت جدید میسازه
+console.log(template === obj); //false
+//-----------------------------------------
+
+const func = (r, v) => r + v;
+const result4 = [1, 2, 3].reduce(func, 0);
+//0 بعنوان پیش فرض بهش اضافه شده و تابع رو برای ما اجرا میکنه
+console.log(result4); //6
+//-----------------------------------------
+const check = (value) => value === 3;
+const result5 = [1, 2, 3].some(check);
+console.log(result5); //true
+//سوال میگه عدد ۳ توی ارایه هست یا نه
+//-----------------------------------------
+const array1 = [1, 2, 3];
+let array2 = array1.concat(4, 5, 6);
+const result6 = array1;
+console.log(result6); //[1,2,3]
+console.log(array2); //[1,2,3,4,5,6]
+//متد contact هیچ کاری به ارایه اصلی نداره. یه ارایه جدید برمیگردونه
+//----------------------------------------
+let value = Math.PI;
+const result = Math.ceil(value)
+//ceil => اعشار رو حذف میکنه و یکی بهش اضافه میکنه
+console.log(result);//4
+
+//----------------------------------------------------
+const check = value => value ===2;
+const result1 = [1,2,3].every(check)
+console.log(result1);//false
+//چون تمامی ارایه برابر ۲ نیس
+//----------------------------------------------------
+let text= 'ECMAScript'
+console.log(text.charAt(1));//C
+//----------------------------------------------------
+const result2 = Math.round(19.65)
+console.log(result2); // 20
+//طبق اعشارت عدد رو رند میکنه
+//---------------------------------------------------
+let arr = [1,2,3]
+let copy = arr.reverse()
+console.log(arr === copy);//true
+//چون ریورس هم یه خروجی جدید برمیگردونه هم ارایه اصلی رو تغییر میده
+//---------------------------------------------------
+console.log('34' - '18');//16
+//---------------------------------------------------
+console.log( true + true); //1 + 1 = 2
+//---------------------------------------------------
+const func = ()=>{
+    return 34;
+}
+const result3 = 18 && func()// 18 && 34
+console.log(result3); // 34
+//---------------------------------------------------
+
 
 
 
